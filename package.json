@@ -22,5 +22,8 @@
     "express-request-proxy": "^2.0.0",
     "fs": "0.0.1-security",
     "pg": "^6.1.5"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
   }
 }
