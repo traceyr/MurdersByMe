@@ -17,5 +17,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 app.get('/', (req, res) => res.sendFile('index.html', {root: '.'}));
+app.get('/murders', (req, res) => {
+  client.query(`
+    SELECT * FROM murders
+    `)
+    .then(result => res.send(result.rows))
+    .catch(console.error);
+});
 
 app.listen(PORT, () => console.log(`server up on Port ${PORT}`));
