@@ -10,10 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/traceyr/MurdersByMe.git"
   },
-  "author": "Anna Shelby" "Tracey Radcliffe", 
+  "author": "Anna Shelby Tracey Radcliffe",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/traceyr/MurdersByMe/issues"
   },
-  "homepage": "https://github.com/traceyr/MurdersByMe#readme"
+  "homepage": "https://github.com/traceyr/MurdersByMe#readme",
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-request-proxy": "^2.0.0",
+    "fs": "0.0.1-security",
+    "pg": "^6.1.5"
+  }
 }
