@@ -1,0 +1,14 @@
+#map-location {
+  height: 500px;
+  width: 500px;
+  display: block;
+  // overflow: hidden;
+}
+
+html {
+  background-color: pink;
+}
+
+h1 {
+  color: purple; 
+}
