@@ -2,7 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <!-- the app will be mobile friendly  -->
+    <meta name="viewport" content="width=device-width, inital-scale=1">
     <title>Murders By Me</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
@@ -11,7 +14,16 @@
 
     <main>
       <h1>Hello World</h1>
+      <section>
+        <div id="map-location">
+          <!-- This is going to be our google maps form and map -->
+        </div>
+      </section>
     </main>
 
+
+  <script src="javascript/model/maps.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSCeLGjMPYYck_Gzd1o5qnJ8L07ENqed0
+&callback=initMap"></script>
   </body>
 </html>

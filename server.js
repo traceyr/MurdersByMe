@@ -18,31 +18,31 @@ app.use(express.static('./public'));
 //proxy function call here
 //git route that utilizes our proxy call for heroku
 app.get('/', (req, res) => res.sendFile('index.html', {root: '.'}));
-app.get('/murders', (req, res) => {
-  client.query(`
-    SELECT * FROM murders`
-  ) //put search limitations into query - only 10 closest murders
-    .then(result => res.send(result.rows))
-    .catch(console.error);
-});
+// app.get('/murders', (req, res) => {
+//   client.query(`
+//     SELECT * FROM murders`
+//   ) //put search limitations into query - only 10 closest murders
+//     .then(result => res.send(result.rows))
+//     .catch(console.error);
+// });
 //Will we need a post request to put data into the database?
 app.listen(PORT, () => console.log(`server up on Port ${PORT}`));
 
 ////////////////////DATABASE LOADER FUNCTION//////////////////
 //coordinates_lat and coordinates_lon come from location_1 coordinates object
 //from our ajax call can we pull these apart and put them in separately?
-function loadDB() {
-  client.query(`
-    CREATE IF NOT EXISTS
-    murders (
-      crimedate TEXT,
-      inside_outside TEXT,
-      coordinates_lat INTEGER,
-      coordinates_lon INTEGER,
-      premise TEXT,
-      weapaon TEXT,
-      total_incidents TEXT
-    );`)
-    .then(loadMurders)
-    .catch(console.error);
-};
+// function loadDB() {
+//   client.query(`
+//     CREATE IF NOT EXISTS
+//     murders (
+//       crimedate TEXT,
+//       inside_outside TEXT,
+//       coordinates_lat INTEGER,
+//       coordinates_lon INTEGER,
+//       premise TEXT,
+//       weapaon TEXT,
+//       total_incidents TEXT
+//     );`)
+//     .then(loadMurders)
+//     .catch(console.error);
+// };
