@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 const pg = require('pg');
 const conString = 'postgres://localhost:5432';
 const bodyParser = require('body-parser');
+const requestProxy = require('express-request-proxy');
 
 const client = new pg.Client(conString);
 
@@ -16,6 +17,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 //proxy function call here
+function proxySeattle(req,res) {
+  console.log('routing Seattle API request for', req.params[0]);
+  (requestProxy({
+    url: `https://data.seattle.gov/resource/y7pv-r3kh.json?summarized_offense_description=HOMICIDE`,
+    headers: {Authorization:`token ${process.env.SEATTLE_TOKEN}`}
+  }))(req,res);
+}
 //git route that utilizes our proxy call for heroku
 app.get('/', (req, res) => res.sendFile('index.html', {root: '.'}));
 // app.get('/murders', (req, res) => {
