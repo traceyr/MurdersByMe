@@ -3,7 +3,7 @@
 (function(module) {
   // object constructor like this.name/name.something
   function Murder(opts){
-    for (key in opts) this[key] = opts[key];
+    for (let key in opts) this[key] = opts[key];
   }
 
   Murder.all = [];

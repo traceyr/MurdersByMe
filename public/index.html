@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, inital-scale=1">
     <title>Murders By Me</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- our handlebar template for our murders in the area  -->
+    <script id="murders-template" type="text/x-handlebars-template">
+      <h2>{{offense_type}}</h2>
+      <h4>{{date_reported}}</h4>
+      <h4>{{hundred_block_location}}</h4>
+      <h4>{{year}}</h4>
+    </script>
   </head>
   <body>
     <header>
@@ -19,8 +26,13 @@
           <!-- This is going to be our google maps form and map -->
         </div>
       </section>
+      <section>
+        <div id="murders-form">
+          <!-- handlebars template here -->
+        </div>
+      </section>
     </main>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSCeLGjMPYYck_Gzd1o5qnJ8L07ENqed0&callback=initMap"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="javascript/model/maps.js"></script>
