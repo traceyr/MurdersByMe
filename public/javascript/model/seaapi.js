@@ -14,20 +14,11 @@
     .then(data => Murder.loadMurders(data), err => console.error(err))
     .then(next);
   };
-  //this is for our handlebars template
-  Murder.prototype.toHTML = function(template){
-    let newTemplate = Handlebars.compile((template).html());
-    return newTemplate(this);
-  };
   //this in our function for loadMurders connected to our ajax call - it will push our new Murder to the murder.all empty array up top
   Murder.loadMurders = function(data){
     Murder.all = data.map(function(ele){
       return new Murder(ele);
     });
-  };
-
-  Murder.showData = function (){
-    console.log(Murder.all);
   };
 
   module.Murder = Murder;
